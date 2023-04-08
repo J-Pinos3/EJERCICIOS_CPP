@@ -1,0 +1,3 @@
+{9} {8} {22} {31} {54} 
+
+Elemento: 31 encontrado en la posicion 4

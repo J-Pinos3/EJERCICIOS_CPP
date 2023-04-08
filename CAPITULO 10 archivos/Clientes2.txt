@@ -1,0 +1,8 @@
+12 Jose 321.69
+13 Daniela 0.00
+14 Antonella -56.97
+15 Diego 123.61
+300 White 0.00
+400 Stone -42.16
+100 Jones 24.98
+200 Doe 345.68

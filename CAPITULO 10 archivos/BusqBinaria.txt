@@ -1,0 +1,3 @@
+{0} {9} {11} {32} {45} 
+
+Elemento :11 encontrado en la posicion: 3

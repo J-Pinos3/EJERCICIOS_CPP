@@ -1,0 +1,4 @@
+12  Jose  321.6
+13  Daniela  321.6
+14  Antonella  322.1
+15  Diego  123.3
