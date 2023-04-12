@@ -5,6 +5,7 @@
 #include <QtSql>
 #include <QtDebug>
 #include <QMessageBox>
+#include "principal.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,6 +16,11 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    QSqlDatabase mydb;
+    void conClose();
+    bool conOpen();
+
+public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -23,6 +29,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    QSqlDatabase mydb;
+
 };
 #endif // MAINWINDOW_H
