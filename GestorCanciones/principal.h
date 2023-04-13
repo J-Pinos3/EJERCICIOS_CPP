@@ -13,9 +13,15 @@ class Principal : public QDialog
     Q_OBJECT
 
 public:
-    MainWindow manw;
     explicit Principal(QWidget *parent = nullptr);
     ~Principal();
+
+private slots:
+    void on_fileFoto_clicked();
+
+    void on_fileMp3_clicked();
+
+    void on_btnAgregar_clicked();
 
 private:
     Ui::Principal *ui;

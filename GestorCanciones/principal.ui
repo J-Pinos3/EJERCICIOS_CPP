@@ -276,7 +276,7 @@ color: rgb(255, 255, 255);</string>
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="fileFoto">
    <property name="geometry">
     <rect>
      <x>330</x>
@@ -292,7 +292,7 @@ color: rgb(255, 255, 255);</string>
     <string>Archivo</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="fileMp3">
    <property name="geometry">
     <rect>
      <x>330</x>
@@ -308,7 +308,7 @@ color: rgb(255, 255, 255);</string>
     <string>Archivo</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="btnAgregar">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -331,7 +331,7 @@ color: rgb(255, 255, 255);</string>
     <string>Agregar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="btnEliminar">
    <property name="geometry">
     <rect>
      <x>210</x>
@@ -354,7 +354,7 @@ color: rgb(255, 255, 255);</string>
     <string>Eliminar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_5">
+  <widget class="QPushButton" name="btnActualizar">
    <property name="geometry">
     <rect>
      <x>400</x>
@@ -377,7 +377,7 @@ color: rgb(255, 255, 255);</string>
     <string>Actualizar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_6">
+  <widget class="QPushButton" name="btnListar">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -400,7 +400,7 @@ color: rgb(255, 255, 255);</string>
     <string>Listar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_7">
+  <widget class="QPushButton" name="btnBuscar">
    <property name="geometry">
     <rect>
      <x>810</x>
@@ -423,7 +423,7 @@ color: rgb(255, 255, 255);</string>
     <string>Buscar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_8">
+  <widget class="QPushButton" name="btnReproductor">
    <property name="geometry">
     <rect>
      <x>1010</x>
