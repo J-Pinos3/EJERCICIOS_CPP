@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1206</width>
-    <height>652</height>
+    <height>667</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,27 +15,13 @@
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(71, 71, 71);
-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
+</string>
   </property>
-  <widget class="QTableView" name="tableView">
-   <property name="geometry">
-    <rect>
-     <x>440</x>
-     <y>10</y>
-     <width>761</width>
-     <height>521</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 0, 0);
-color: rgb(255, 255, 255);</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>20</y>
+     <x>20</x>
+     <y>10</y>
      <width>81</width>
      <height>20</height>
     </rect>
@@ -57,8 +43,8 @@ background-color: rgb(0, 0, 0);</string>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>100</y>
+     <x>20</x>
+     <y>90</y>
      <width>81</width>
      <height>20</height>
     </rect>
@@ -80,8 +66,8 @@ background-color: rgb(0, 0, 0);</string>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>170</y>
+     <x>20</x>
+     <y>160</y>
      <width>91</width>
      <height>20</height>
     </rect>
@@ -103,8 +89,8 @@ background-color: rgb(0, 0, 0);</string>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>240</y>
+     <x>20</x>
+     <y>230</y>
      <width>91</width>
      <height>20</height>
     </rect>
@@ -126,8 +112,8 @@ background-color: rgb(0, 0, 0);</string>
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>310</y>
+     <x>20</x>
+     <y>300</y>
      <width>191</width>
      <height>20</height>
     </rect>
@@ -149,8 +135,8 @@ background-color: rgb(0, 0, 0);</string>
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>390</y>
+     <x>20</x>
+     <y>380</y>
      <width>191</width>
      <height>20</height>
     </rect>
@@ -172,8 +158,8 @@ background-color: rgb(0, 0, 0);</string>
   <widget class="QLineEdit" name="txtTitulo">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>60</y>
+     <x>20</x>
+     <y>50</y>
      <width>271</width>
      <height>25</height>
     </rect>
@@ -189,8 +175,8 @@ color: rgb(255, 255, 255);</string>
   <widget class="QLineEdit" name="txtArtista">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>130</y>
+     <x>20</x>
+     <y>120</y>
      <width>271</width>
      <height>25</height>
     </rect>
@@ -206,8 +192,8 @@ color: rgb(255, 255, 255);</string>
   <widget class="QLineEdit" name="txtAlbum">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>200</y>
+     <x>20</x>
+     <y>190</y>
      <width>271</width>
      <height>25</height>
     </rect>
@@ -223,8 +209,8 @@ color: rgb(255, 255, 255);</string>
   <widget class="QLineEdit" name="txtGenero">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>270</y>
+     <x>20</x>
+     <y>260</y>
      <width>271</width>
      <height>25</height>
     </rect>
@@ -240,8 +226,8 @@ color: rgb(255, 255, 255);</string>
   <widget class="QLineEdit" name="rutaFoto">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>340</y>
+     <x>20</x>
+     <y>330</y>
      <width>271</width>
      <height>25</height>
     </rect>
@@ -257,8 +243,8 @@ color: rgb(255, 255, 255);</string>
   <widget class="QLineEdit" name="rutaMP3">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>430</y>
+     <x>20</x>
+     <y>420</y>
      <width>271</width>
      <height>25</height>
     </rect>
@@ -279,11 +265,14 @@ color: rgb(255, 255, 255);</string>
   <widget class="QPushButton" name="fileFoto">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>330</y>
+     <x>320</x>
+     <y>320</y>
      <width>93</width>
      <height>29</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(129, 129, 129);</string>
@@ -295,11 +284,14 @@ color: rgb(255, 255, 255);</string>
   <widget class="QPushButton" name="fileMp3">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>430</y>
+     <x>320</x>
+     <y>420</y>
      <width>93</width>
      <height>29</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(129, 129, 129);</string>
@@ -312,7 +304,7 @@ color: rgb(255, 255, 255);</string>
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>570</y>
+     <y>590</y>
      <width>171</width>
      <height>61</height>
     </rect>
@@ -322,6 +314,9 @@ color: rgb(255, 255, 255);</string>
      <pointsize>18</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(0, 0, 0);
@@ -335,7 +330,7 @@ color: rgb(255, 255, 255);</string>
    <property name="geometry">
     <rect>
      <x>210</x>
-     <y>570</y>
+     <y>590</y>
      <width>171</width>
      <height>61</height>
     </rect>
@@ -345,6 +340,9 @@ color: rgb(255, 255, 255);</string>
      <pointsize>18</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(0, 0, 0);
@@ -358,7 +356,7 @@ color: rgb(255, 255, 255);</string>
    <property name="geometry">
     <rect>
      <x>400</x>
-     <y>570</y>
+     <y>590</y>
      <width>191</width>
      <height>61</height>
     </rect>
@@ -368,6 +366,9 @@ color: rgb(255, 255, 255);</string>
      <pointsize>18</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(0, 0, 0);
@@ -381,7 +382,7 @@ color: rgb(255, 255, 255);</string>
    <property name="geometry">
     <rect>
      <x>610</x>
-     <y>570</y>
+     <y>590</y>
      <width>181</width>
      <height>61</height>
     </rect>
@@ -391,6 +392,9 @@ color: rgb(255, 255, 255);</string>
      <pointsize>18</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(0, 0, 0);
@@ -404,7 +408,7 @@ color: rgb(255, 255, 255);</string>
    <property name="geometry">
     <rect>
      <x>810</x>
-     <y>570</y>
+     <y>590</y>
      <width>181</width>
      <height>61</height>
     </rect>
@@ -414,6 +418,9 @@ color: rgb(255, 255, 255);</string>
      <pointsize>18</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(0, 0, 0);
@@ -427,7 +434,7 @@ color: rgb(255, 255, 255);</string>
    <property name="geometry">
     <rect>
      <x>1010</x>
-     <y>570</y>
+     <y>590</y>
      <width>181</width>
      <height>61</height>
     </rect>
@@ -437,6 +444,9 @@ color: rgb(255, 255, 255);</string>
      <pointsize>18</pointsize>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(0, 167, 0);
@@ -449,8 +459,8 @@ color: rgb(0, 0, 0);</string>
   <widget class="QLabel" name="status_con">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>530</y>
+     <x>20</x>
+     <y>550</y>
      <width>181</width>
      <height>20</height>
     </rect>
@@ -461,6 +471,64 @@ color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>[+] Status: </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>470</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>ID</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtID">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>510</y>
+     <width>81</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(197, 197, 197);
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableViewCRUD">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>20</y>
+     <width>751</width>
+     <height>521</height>
+    </rect>
    </property>
   </widget>
  </widget>

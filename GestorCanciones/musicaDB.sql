@@ -31,6 +31,6 @@ CREATE TABLE IF NOT EXISTS cancion
     mp3 varchar(200)
 );
 
-
+SELECT * FROM cancion;
 
 

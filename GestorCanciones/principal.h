@@ -23,8 +23,15 @@ private slots:
 
     void on_btnAgregar_clicked();
 
+    void on_btnEliminar_clicked();
+
+    void on_btnActualizar_clicked();
+
+    void on_btnListar_clicked();
+
 private:
     Ui::Principal *ui;
+    QSqlQueryModel *querymodel;
 };
 
 #endif // PRINCIPAL_H

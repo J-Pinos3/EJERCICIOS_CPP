@@ -178,13 +178,13 @@ border-color: rgb(0, 206, 0);</string>
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">background-color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>Crystal_Clear_app_Login_Manager.svg.png</pixmap>
+     <pixmap>Crystal_Clear_app_Login_Manager.svg.jpg</pixmap>
     </property>
    </widget>
   </widget>
