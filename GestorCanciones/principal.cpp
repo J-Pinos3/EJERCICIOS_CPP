@@ -162,7 +162,7 @@ void Principal::on_btnActualizar_clicked()
 
 void Principal::on_btnListar_clicked()
 {
-    MainWindow conec;
+
     //background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
     /*
     QSqlQueryModel *model = new QSqlQueryModel();
@@ -184,12 +184,16 @@ void Principal::on_btnListar_clicked()
     }
 
     ui->tableViewCRUD->setModel(model);
-    */
+
+    ----------------------------------------------------------
+
     conec.conOpen();
 
-    querymodel = new QSqlQueryModel();
+    QSqlQueryModel *querymodel = new QSqlQueryModel();
     querymodel->setQuery("SELECT * FROM cancion");
     ui->tableViewCRUD->setModel(querymodel);
+    ui->tableViewCRUD->show();
+
     qDebug() <<"Valors de la consulta select * \n\n";
     for(int row = 0; row < querymodel->rowCount(); row++){
         for(int col = 0; col < querymodel->columnCount(); col++){
@@ -197,7 +201,38 @@ void Principal::on_btnListar_clicked()
                      << querymodel->data(querymodel->index(row,col)).toString()<< "\n";
         }
     }
-    conec.conClose();
+    //conec.conClose(); NO cierro la conexión
     qDebug() << (querymodel -> rowCount());
+
+    */
+
+    MainWindow conec;
+    conec.conOpen();
+
+    QSqlQuery qry(conec.mydb);
+
+    qry.prepare("SELECT * FROM cancion");
+    if( qry.exec() ){
+        int row_number = 0;
+        ui->tableWidget1->setRowCount(qry.size());
+        while( qry.next() ){
+            ui->tableWidget1->setItem( row_number,0, new QTableWidgetItem(QString::number(qry.value("id").toInt())) );
+            ui->tableWidget1->setItem( row_number,1, new QTableWidgetItem(QString(qry.value("titulo").toString())) );
+            ui->tableWidget1->setItem( row_number,2, new QTableWidgetItem(QString(qry.value("artista").toString())) );
+            ui->tableWidget1->setItem( row_number,3, new QTableWidgetItem(QString(qry.value("album").toString())) );
+            ui->tableWidget1->setItem( row_number,4, new QTableWidgetItem(QString(qry.value("genero").toString())) );
+            ui->tableWidget1->setItem( row_number,5, new QTableWidgetItem(QString(qry.value("foto").toString())) );
+            ui->tableWidget1->setItem( row_number,6, new QTableWidgetItem(QString(qry.value("mp3").toString())) );
+
+            ui->tableWidget1->setVisible(true);
+            qDebug() << QString::number(qry.value("id").toInt()) << " " << QString(qry.value("titulo").toString()) <<
+                    QString(qry.value("artista").toString()) << QString(qry.value("album").toString()) <<
+                    QString(qry.value("genero").toString()) << QString(qry.value("foto").toString()) <<
+                    QString(qry.value("mp3").toString()) << ".\n";
+            row_number++;
+        }
+        conec.conClose();
+    }
+
 }
 

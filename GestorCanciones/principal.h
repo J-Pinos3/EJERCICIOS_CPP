@@ -29,9 +29,10 @@ private slots:
 
     void on_btnListar_clicked();
 
+
 private:
     Ui::Principal *ui;
-    QSqlQueryModel *querymodel;
+
 };
 
 #endif // PRINCIPAL_H
