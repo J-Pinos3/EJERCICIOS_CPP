@@ -1,6 +1,7 @@
 #include <iostream>
 #include <array>
 #include <string>
+#include <ctime>
 #include "Tiempo.h"
 using namespace std;
 
@@ -9,8 +10,11 @@ void mostrar_hora_estandar(const array<TIEMPO,5> &arr);
 int main(int argc, char const *argv[])
 {
     
+    time_t tiempo;
     string linea(10,'*');
     array<TIEMPO,5> arrTempo ={};
+
+    TIEMPO t1 = TIEMPO(tiempo);
 
     for(int i = 0; i < arrTempo.size(); i++){
         arrTempo[i] = TIEMPO();
@@ -27,6 +31,8 @@ int main(int argc, char const *argv[])
     mostrar_hora_estandar(arrTempo);
 
     cout << endl << linea << endl;
+    cout <<"Usando CTime "<< endl;
+    t1.imprimirEstandar();
     return 0;
 }
 

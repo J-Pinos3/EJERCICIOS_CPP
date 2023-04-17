@@ -7,6 +7,15 @@ using namespace std;
 
 TIEMPO::TIEMPO(): horas(0), minutos(0), segundos(0){ }
 
+TIEMPO::TIEMPO(std::time_t a){
+    a = std::time(nullptr);
+    std::tm tm =*std::localtime(&a);
+
+    horas=tm.tm_hour;
+    minutos=tm.tm_min;
+    segundos=tm.tm_sec;
+}
+
 void TIEMPO::setTiempo(int h, int m, int s){
     //las horas van de  0 - 23
     if( (h>=0 && h < 24) && (m >= 0 && m < 60) && (s >= 0 && s < 60) ){
