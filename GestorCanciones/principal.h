@@ -3,6 +3,9 @@
 
 #include <QDialog>
 #include "mainwindow.h"
+#include <QByteArray>
+#include <QPixmap>
+#include <QTableWidgetItem>
 
 namespace Ui {
 class Principal;

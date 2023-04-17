@@ -207,6 +207,11 @@ void Principal::on_btnListar_clicked()
 
     */
 
+    //-
+
+    QPixmap Image;
+    //QString ImageName;
+
     MainWindow conec;
     conec.conOpen();
 
@@ -222,7 +227,18 @@ void Principal::on_btnListar_clicked()
             ui->tableWidget1->setItem( row_number,2, new QTableWidgetItem(QString(qry.value("artista").toString())) );
             ui->tableWidget1->setItem( row_number,3, new QTableWidgetItem(QString(qry.value("album").toString())) );
             ui->tableWidget1->setItem( row_number,4, new QTableWidgetItem(QString(qry.value("genero").toString())) );
-            ui->tableWidget1->setItem( row_number,5, new QTableWidgetItem(QString(qry.value("foto").toString())) );
+
+
+            QTableWidgetItem *ImageItem = new QTableWidgetItem;
+            //Image.loadFromData(ImageFromDB,"JPG");
+            Image.load(qry.value("foto").toString(),"JPG");
+
+
+            //ImageItem->setIcon(QIcon(Image));
+            ImageItem->setData(Qt::DecorationRole,Image.scaled(100,100));
+            ui->tableWidget1->setItem( row_number,5, ImageItem);
+
+            //ui->tableWidget1->setItem( row_number,5, new QTableWidgetItem(QString(qry.value("foto").toString())) );
             ui->tableWidget1->setItem( row_number,6, new QTableWidgetItem(QString(qry.value("mp3").toString())) );
 
             ui->tableWidget1->setVisible(true);
