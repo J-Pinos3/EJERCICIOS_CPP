@@ -139,13 +139,14 @@ void Principal::on_btnActualizar_clicked()
 
     conec.conOpen();
     QSqlQuery qry;
-    qry.prepare("UPDATE cancion SET titulo=:mp3, artista=:foto, album=:genero, genero=:album, foto=:artista, mp3=:titulo WHERE id='"+songid+"'");
+    qry.prepare("UPDATE cancion SET titulo=:titulo, artista=:artista, album=:album, genero=:genero, foto=:foto, mp3=:mp3 WHERE id='"+songid+"'");
     qry.bindValue(":titulo",titulo);
     qry.bindValue(":artista",artista);
     qry.bindValue(":album",album);
     qry.bindValue(":genero",genero);
     qry.bindValue(":foto",fotofile);
     qry.bindValue(":mp3",mp3file);
+
 
 
     if( qry.exec() ){
@@ -235,4 +236,48 @@ void Principal::on_btnListar_clicked()
     }
 
 }
+
+
+void Principal::on_btnBuscar_clicked()
+{
+    MainWindow conec;
+    QString titulo;
+
+    titulo = ui->txtTitulo->text();
+
+
+    if( !conec.conOpen() ){
+        QMessageBox::information(this, "Conexión",
+                    "Error al abrir la Base de Datos");
+        return ;
+    }
+
+
+    conec.conOpen();
+    QSqlQuery qry;
+    qry.prepare("SELECT * FROM cancion WHERE titulo='"+titulo+"'");
+
+
+    if( qry.exec() ){
+        while(qry.next()){
+            ui->txtID->setText(qry.value(0).toString());
+            ui->txtTitulo->setText(qry.value(1).toString());
+            ui->txtArtista->setText(qry.value(2).toString());
+            ui->txtAlbum->setText(qry.value(3).toString());
+            ui->txtGenero->setText(qry.value(4).toString());
+            ui->rutaFoto->setText(qry.value(5).toString());
+            ui->rutaMP3->setText(qry.value(6).toString());
+
+        }
+    }else{
+        QMessageBox::critical(this, "Buscar","No se pudo encontrar la canción");
+        qDebug() << "Error: " << qry.lastError() <<"\n";
+    }
+
+    //QSqlDatabase::database().commit();
+    conec.conClose();
+}
+
+
+
 

@@ -29,6 +29,8 @@ private slots:
 
     void on_btnListar_clicked();
 
+    void on_btnBuscar_clicked();
+
 
 private:
     Ui::Principal *ui;
