@@ -36,6 +36,8 @@ private slots:
     void on_btnBuscar_clicked();
 
 
+    void on_btnReproductor_clicked();
+
 private:
     Ui::Principal *ui;
 

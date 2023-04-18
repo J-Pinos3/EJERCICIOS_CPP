@@ -43,3 +43,6 @@ void Reproductor::ListarCanciones(){
         conec.conClose();
     }
 }
+
+
+

@@ -297,3 +297,12 @@ void Principal::on_btnBuscar_clicked()
 
 
 
+
+void Principal::on_btnReproductor_clicked()
+{
+    this->hide();
+    Reproductor reproductor;
+    reproductor.setModal(true);
+    reproductor.exec();
+}
+

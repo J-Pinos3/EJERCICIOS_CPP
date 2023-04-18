@@ -21,6 +21,9 @@ public:
     explicit Reproductor(QWidget *parent = nullptr);
     ~Reproductor();
 
+private slots:
+
+
 private:
     Ui::Reproductor *ui;
 };
