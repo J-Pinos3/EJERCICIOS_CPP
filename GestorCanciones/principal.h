@@ -6,6 +6,7 @@
 #include <QByteArray>
 #include <QPixmap>
 #include <QTableWidgetItem>
+#include "reproductor.h" //para abrir esta pestaña
 
 namespace Ui {
 class Principal;
