@@ -1,4 +1,4 @@
-QT       += core gui sql
+QT       += core gui sql multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -23,6 +23,8 @@ FORMS += \
     mainwindow.ui \
     principal.ui \
     reproductor.ui
+
+QMAKE_CXXFLAGS += -std=c++17
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

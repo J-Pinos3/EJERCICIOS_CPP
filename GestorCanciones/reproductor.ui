@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Reperoductor MP3</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(71, 71, 71);</string>
@@ -41,7 +41,7 @@ color: rgb(0, 0, 0);</string>
    <column/>
    <column/>
   </widget>
-  <widget class="QProgressBar" name="progressBar">
+  <widget class="QProgressBar" name="avance">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -51,17 +51,17 @@ color: rgb(0, 0, 0);</string>
     </rect>
    </property>
    <property name="value">
-    <number>24</number>
+    <number>0</number>
    </property>
    <property name="format">
-    <string>0:00</string>
+    <string>0</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btnPlay">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>540</y>
+     <x>340</x>
+     <y>530</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -89,8 +89,8 @@ color: rgb(255, 255, 255);</string>
   <widget class="QPushButton" name="btnPause">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>540</y>
+     <x>480</x>
+     <y>530</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -115,8 +115,8 @@ color: rgb(255, 255, 255);</string>
   <widget class="QPushButton" name="btnStop">
    <property name="geometry">
     <rect>
-     <x>580</x>
-     <y>540</y>
+     <x>620</x>
+     <y>530</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -141,8 +141,8 @@ color: rgb(255, 255, 255);</string>
   <widget class="QPushButton" name="btnMute">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>540</y>
+     <x>760</x>
+     <y>530</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -278,6 +278,19 @@ color: rgb(255, 255, 255);</string>
    </property>
    <property name="margin">
     <number>0</number>
+   </property>
+  </widget>
+  <widget class="QSlider" name="volumen">
+   <property name="geometry">
+    <rect>
+     <x>900</x>
+     <y>540</y>
+     <width>191</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
    </property>
   </widget>
  </widget>
