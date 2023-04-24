@@ -15,6 +15,8 @@ int main(int argc, char const *argv[])
     array<TIEMPO,5> arrTempo ={};
 
     TIEMPO t1 = TIEMPO(tiempo);
+    TIEMPO t2 = TIEMPO();
+    TIEMPO t3 = TIEMPO();
 
     for(int i = 0; i < arrTempo.size(); i++){
         arrTempo[i] = TIEMPO();
@@ -33,6 +35,13 @@ int main(int argc, char const *argv[])
     cout << endl << linea << endl;
     cout <<"Usando CTime "<< endl;
     t1.imprimirEstandar();
+    cout << endl << linea << endl;
+
+    t2.setTiempo(15,58,59);
+    t2.tictac();
+    t3.setTiempo(21,59,59);
+    t3.tictac();
+
     return 0;
 }
 

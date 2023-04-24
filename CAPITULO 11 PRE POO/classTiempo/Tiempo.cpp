@@ -35,3 +35,31 @@ void TIEMPO::imprimirEstandar() const{
     setw(2) << segundos << (horas < 12 ? "AM":"PM")<< endl;
 }
 
+void TIEMPO::tictac(){
+    segundos+=1;
+    if( minutos < 60 && segundos == 60){
+        minutos++;
+        segundos=0;
+    }
+
+    if(minutos == 60){
+        horas++;
+        minutos = 0;
+        segundos =0;
+    }
+    
+    if(horas < 24 && minutos == 60){
+        horas+=1;
+        minutos = 0;
+        segundos =0;
+    }
+
+    if(horas == 24){
+        horas = 0;
+        segundos = 0;
+        minutos =0;
+    }
+
+    cout <<"La hora un segundo después es: "; imprimirUniversal();
+
+}
