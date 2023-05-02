@@ -11,6 +11,7 @@ for(int i = 0; i < 3; i++){
         cout <<"["<<i+1<<"]["<<j+1<<"]: ";
 
         cin >> *( *(matriz+i)+j );
+        //cin >> *( *matriz+i*3+j );
     }
 }
 
