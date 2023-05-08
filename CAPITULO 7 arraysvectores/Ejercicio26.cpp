@@ -80,7 +80,7 @@ void turnoJUGADOR(char& turno,string nombreONE, string nombreTWO, int& pos, int&
   if(turno == 'o'){
     cout <<setw(15)<<"Turno de: "<<nombreTWO<<" --> [o]"<<endl;
   }
-  cout <<"Ingrese la posici"<<letra_o_tilde<<"n de su figura"<<endl;
+  cout <<"Ingrese la posicion de su figura"<<endl;
   cin >> pos;
   cin.ignore();
 
@@ -140,10 +140,10 @@ void turnoJUGADOR(char& turno,string nombreONE, string nombreTWO, int& pos, int&
       break;
 
       default:{
-        cout <<"Error, posici"<<letra_o_tilde<<"n no válida"<<endl;
+        cout <<"Error, posicion no válida"<<endl;
       }
 
-
+  cout <<"Aqui1"<<endl;
   }//fin del switch
 
   if( (turno == 'x')&&(tab[fila1][columna1] != 'x')&&(tab[fila1][columna1] != 'o')  ){
@@ -157,10 +157,11 @@ void turnoJUGADOR(char& turno,string nombreONE, string nombreTWO, int& pos, int&
   turno = 'x';//esta línea es para que le toque al siguiente jugador
 
 }else{
-  cout <<"Espacio lleno, elige optra posici"<<letra_o_tilde<<"n"<<endl;
+  cout <<"Espacio lleno, elige optra posicion"<<endl;
   turnoJUGADOR(turno, nombreONE, nombreTWO, pos, fila1, columna1, tab);
     }
 
+cout <<"Aqui1"<<endl;
 mostrarTABLERO(tab);
 system("cls");
 
