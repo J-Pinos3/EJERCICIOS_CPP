@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "array": "cpp",
+        "vector": "cpp",
+        "memory": "cpp",
+        "random": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp",
+        "xmemory": "cpp",
+        "xstddef": "cpp",
+        "xstring": "cpp",
+        "iosfwd": "cpp",
+        "tuple": "cpp",
+        "xlocale": "cpp",
+        "xutility": "cpp"
+    }
+}
