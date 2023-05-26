@@ -40,8 +40,8 @@ int main(int argc, char const *argv[])
     
 
     cout << endl;
-        mostrarTablero(tablero, filas, columnas);
-        turnoJugador(turno, nom1, nom2, f, c, tablero, filas, columnas);
+        //mostrarTablero(tablero, filas, columnas);
+        //turnoJugador(turno, nom1, nom2, f, c, tablero, filas, columnas);
     while(check(tablero, empate, filas, columnas)){
         //cout <<"DENTRO del while de main"<<endl;
         mostrarTablero(tablero, filas, columnas);
@@ -150,117 +150,137 @@ void turnoJugador(char &turno, string name1, string name2,  int &fila1, int&colu
 
 
 bool check(int **p, bool &empate, const int filas, const int columnas){
-    
-
-    bool horizon = false;
+   bool horizon = false;
     int contadorOK = 0;
 
-    for(int i = filas -1; i >=0 && contadorOK !=3; i--){
+    for(int i = filas -1; i >=0 && contadorOK != 3; i--){
         contadorOK = 0;
         for(int j = 0; j < columnas-1; j++){
             
-            if( p[i][j] != 0 && (p[i][j] == p[i][j+1]) && contadorOK !=3 ){
+            if( (p[i][j] != 0 )&& (p[i][j] == p[i][j+1]) ){
                 contadorOK++;
                 horizon = true;
-            }else{
+            }
             
-                horizon = false;
+            if(contadorOK == 3){
                 break;
             }
             
         }
+        
     }
     
-   // cout <<"\nhorizon: " << horizon <<endl;
+    if(contadorOK == 3){
+        empate = false;
+        return false;
+    }else{
+        //cout <<"\t\ta1"<<endl;
+        empate = true;
+        //return true;
+    }
     
+    //cout <<"\nhorizon: " << horizon <<endl;
     
+
+
+    contadorOK = 0;
     //ahora verticales    
     bool vertica = false;
-    
-    
-    for(int j = 0; j < columnas-1 && contadorOK !=3; j++){
+    for(int j = 0; j < columnas-1  && contadorOK != 3 ; j++){
             contadorOK=0;
         for(int i = filas -1; i >0; i--){
                     
-            if( p[i][j] != 0 && (p[i][j] == p[i-1][j]) && contadorOK !=3 ){
+            if( (p[i][j] != 0 )&& (p[i][j] == p[i-1][j]) ){
                 contadorOK++;
                 vertica = true;
-            }else{
-                vertica = false;
-                //
+
+            }
+            if(contadorOK ==3){
                 break;
             }   
         }
     }
-    //cout <<"vertica: " << vertica <<endl;
     
-    
-    if(vertica == true || horizon == true ){
-        cout <<"Here"<<endl;
-        return false;//al retornar false se saldrá del while que maneja el juego
+    if(contadorOK == 3){
+        empate = false;
+        return false;
+    }else{ 
+        empate = true;
     }
+
+
 
 
     bool dere = false;
     contadorOK = 0;
     //diagonal hacia la derecha
     
-    for(int k = 0; k < columnas && contadorOK != 3; k++){
+    for(int k = 0; k < columnas  && contadorOK != 3 ; k++){
         int i = filas -1, j =k;
-        while(i > 0 && j < columnas && contadorOK != 3){
-            if( p[i][j] != 0 && p[i][j] == p[i-1][j+1] && contadorOK != 3 ){
+        while(i > 0 && j < columnas){
+            if( (p[i][j] != 0 )&& p[i][j] == p[i-1][j+1]  ){
+                cout <<"c incrementa"<<endl;
                 contadorOK++;
                 dere = true;
-            }else{
+            }
+            
+            if(contadorOK ==3){
+                cout <<"Aqui3"<<endl;
                 break;
             }
             i--;
             j++;
         }
-        if(contadorOK == 3){ break; }
+    }
+
+    
+    if(contadorOK == 3){
+        empate = false;
+        return false;
+    }else{
+        empate = true;
     }
     
-    //cout <<"dere: " << dere<<endl;
+    cout <<"dere: " << dere<<endl;
     
-    
+/*
     
     bool izq = false;
     contadorOK = 0;
     //diagonal hacia la izquierda
-    for(int k = columnas-1; k > 0 && contadorOK != 3; k--){
+    for(int k = columnas-1  && contadorOK != 4 ; k > 0; k--){
         int i = filas -1, j =k;
-        while(i > 0 && j > 0 && contadorOK != 3){
-            if( p[i][j] !=0 && p[i][j] == p[i-1][j-1] && contadorOK != 3 ){
+        while(i > 0 && j > 0 ){
+            if( (p[i][j] != 0) && p[i][j] == p[i-1][j-1] ){
                 contadorOK++;
                 izq = true;
-            }else{
+            }
+            if (contadorOK ==4){
+                cout <<"Aqui4"<<endl;
                 break;
             }
             i--;
             j--;
         }
-        if(contadorOK == 3){ break; }
-    }
-    //cout <<"izq: " << izq<<endl;
-    
-    if(dere == true || izq == true ){
-        cout <<"Here2"<<endl;
-        return false;//;al retornar false se saldrá del while que maneja el juego
+        if(contadorOK == 4){ break; }
     }
 
-
-    /*
-    for(int i = 0;i < filas; i++){
-        for(int j = 0; j < columnas; j++){
-            if(p[i][j] == 0){
-                empate = false;
-                return empate;
-            }
-        }
-    }
-    */
     
-    empate = true;
+    if(contadorOK == 4){
+        empate = false;
+        return false;
+    }else{
+        
+        cout <<"\t\ta4"<<endl;
+        empate = true;
+        return true;
+    }        
+    cout <<"izq: " << izq<<endl;
+    
+*/
+
+
+
     return empate;
 
 }//FIN DE LA FUNCIÓN CHECK
