@@ -49,6 +49,10 @@
         "xutility": "cpp",
         "algorithm": "cpp",
         "random": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "locale": "cpp",
+        "sstream": "cpp",
+        "xlocbuf": "cpp",
+        "xlocmes": "cpp"
     }
 }
