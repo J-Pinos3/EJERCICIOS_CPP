@@ -1,5 +1,6 @@
 #include "Date.h"
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 int main(int argc, char const *argv[])
@@ -42,6 +43,13 @@ int main(int argc, char const *argv[])
         }
     }
 
+
+    system("pause");    system("cls");
+
+    Date fech(10,5,2018);
+    fech.print();
+    fech.nextDay();
+    fech.print();
 
     return 0;
 }

@@ -36,6 +36,7 @@ public:
     bool isLess(const Date &d) const;
     const string& toString() const;
     void print() const;
+    void nextDay();
 };
 
 inline bool Date::isLess(const Date &d) const{
