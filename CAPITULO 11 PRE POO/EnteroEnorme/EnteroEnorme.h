@@ -1,5 +1,5 @@
-#ifndef GRANDE_H
-#define GRANDE_H
+#ifndef ENTEROENORME_H
+#define ENTEROENORME_H
 
 #include <array>
 #include <string>
@@ -47,4 +47,4 @@ private:
 
 
 
-#endif //GRANDE_H
+#endif //ENTEROENORME_H

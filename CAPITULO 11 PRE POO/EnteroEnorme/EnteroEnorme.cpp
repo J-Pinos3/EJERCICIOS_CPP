@@ -1,7 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
-#include "Grande.h"
+#include "EnteroEnorme.h"
 using namespace std;
 
 
@@ -81,7 +81,7 @@ EnteroEnorme EnteroEnorme::operator-(const EnteroEnorme& a ){
             }
         }
 
-        if(valorSuperior > valorInferior){
+        if(valorSuperior >= valorInferior){
             resultado.entero[i] = valorSuperior - valorInferior;
         }else{
             valorSuperior += 10;
@@ -99,6 +99,7 @@ EnteroEnorme EnteroEnorme::operator-(const EnteroEnorme& a ){
 //restar enteroenorme - int
 EnteroEnorme EnteroEnorme::operator-(int a ){
     EnteroEnorme tmp(a);
+    //return operator-(tmp);
     return (*this) - tmp;
 
 }
@@ -107,6 +108,7 @@ EnteroEnorme EnteroEnorme::operator-(int a ){
 EnteroEnorme EnteroEnorme::operator-(const std::string& a ){
 
     EnteroEnorme tmp(a);
+    //return operator-(tmp);
     return (*this) - tmp;
 
 }
@@ -192,7 +194,7 @@ void EnteroEnorme::entrada(const std::string& valor){
 }
 
 
-std::string EnteroEnorme::toString() const{
+string EnteroEnorme::toString() const{
     int i;
     for(i=0; (i<40)&&(entero[i] == 0); i++ ){
         ;//salta los 0's iniciales del número 0053
