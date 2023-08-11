@@ -22,7 +22,7 @@ int main()
         cin.ignore();
 
 
-
+        /*
         cout <<"Ingrese la clave: ";
         cin >> clave;
         cin.ignore();
@@ -37,8 +37,22 @@ int main()
             cout <<"\nMensaje desencriptado: " << nuevo << endl;
         }
 
+        */
+
+        cout <<"Ingrese el mensaje: ";
+        getline(cin, msg);
+
+        if(op == '1'){
+            string nuevo = Sustitucion::Cifrar(msg);
+            cout <<"\nMensaje encriptado: " << nuevo << endl;
+        }else{
+            string nuevo = Sustitucion::Descifrar(msg);
+            cout <<"\nMensaje desencriptado: " << nuevo << endl;
+        }
+
+
         cin.ignore();
-        //system("cls");
+        system("cls");
     }
     return 0;
 }
