@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QListWidgetItem>
 
 
 QT_BEGIN_NAMESPACE
@@ -11,6 +12,8 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+protected:
+    bool eventFilter(QObject *obj, QEvent *event);
 
 public:
     MainWindow(QWidget *parent = nullptr);
@@ -23,6 +26,10 @@ private slots:
 private:
     Ui::MainWindow *ui;
     void AddTaskFromInput();
+
+    void MoveSelectedTask(int offset);
+    void SwapTasks(int i, int j);
+
 
 
 
