@@ -10,21 +10,21 @@ Task::Task(std::string desc, bool don)
     this->done=don;
 }
 
-void Task::saveTasksToFile(const std::vector<Task>& tasks, const std::string& fileName){
+void saveTasksToFile(const std::vector<Task>& tasks, const std::string& fileName){
     std::ofstream ostream (fileName);
     ostream << tasks.size();
 
     for(const Task& task : tasks){
-        std::string description = task.description;
+        std::string description = task.getDescription();
         std::replace(description.begin(), description.end(), ' ','_');
 
-        ostream << "\n" << description << " " << task.done;
+        ostream << "\n" << description << " " << task.getDone();
     }
 
 }
 
 
-std::vector<Task> Task::loadTasksFromFile(const std::string& fileName){
+std::vector<Task> loadTasksFromFile(const std::string& fileName){
 
     if( !std::filesystem::exists(fileName) ){
         return std::vector<Task>();
@@ -44,4 +44,24 @@ std::vector<Task> Task::loadTasksFromFile(const std::string& fileName){
     }
 
     return tasks;
+}
+
+std::string Task::getDescription() const
+{
+    return description;
+}
+
+void Task::setDescription(const std::string &newDescription)
+{
+    description = newDescription;
+}
+
+bool Task::getDone() const
+{
+    return done;
+}
+
+void Task::setDone(bool newDone)
+{
+    done = newDone;
 }

@@ -12,20 +12,23 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-protected:
+public:
     bool eventFilter(QObject *obj, QEvent *event);
 
-public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
     void on_AddButton_clicked();
+    //void on_listWidget_clicked(const QModelIndex &index);
 
+    void on_ClearButton_clicked();
+    void onWindowClosed();
 
 private:
     Ui::MainWindow *ui;
     void AddTaskFromInput();
+    void AddSavedTasks();
 
     void MoveSelectedTask(int offset);
     void SwapTasks(int i, int j);
