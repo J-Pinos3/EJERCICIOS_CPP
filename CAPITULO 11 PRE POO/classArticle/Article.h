@@ -15,6 +15,7 @@ private:
 public:
     Article(int a, const std::string& s, double p);
     Article();
+    Article(const Article& arr);
     ~Article();
     void Print() const;
 

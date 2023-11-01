@@ -36,6 +36,16 @@ Article::Article(){
 }
 
 
+Article::Article(const Article& arr){
+    this->article_number = arr.article_number;
+    this->article_name = arr.article_name;
+    this->price = arr.price;
+
+    number_of_objects+=1;
+    std::cout << "An object of type Article (copy) is created\n";
+}
+
+
 Article::~Article(){
     number_of_objects--;
     std::cout << "An object of type Article is destroyed\n";

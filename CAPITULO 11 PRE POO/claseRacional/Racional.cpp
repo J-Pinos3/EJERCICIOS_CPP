@@ -89,6 +89,62 @@ void RACIONAL::dividir(const RACIONAL& frac2){
 int RACIONAL::getNumerador() const{
     return (this->numerador);
 }
+
 int RACIONAL::getDenominador() const{
     return (this->denominador);
+}
+
+RACIONAL operator+ (const RACIONAL& a, const RACIONAL& b){
+    RACIONAL tmp;
+    tmp.numerador = a.numerador*b.denominador + a.denominador*b.numerador;
+    tmp.denominador = a.denominador * b.denominador;
+    int divis = RACIONAL::maximoComunDivisor(tmp.numerador, tmp.denominador);
+    
+    tmp.numerador /= divis;    tmp.denominador /= divis;
+    
+    return tmp;
+}
+
+RACIONAL operator- (const RACIONAL& a, const RACIONAL& b){
+    RACIONAL tmp;
+    tmp.numerador = a.numerador*b.denominador - a.denominador*b.numerador;
+    tmp.denominador = a.denominador * b.denominador;
+    int divis = RACIONAL::maximoComunDivisor(tmp.numerador, tmp.denominador);
+    
+    tmp.numerador /= divis;    tmp.denominador /= divis;
+    
+    return tmp;
+}
+
+RACIONAL operator* (const RACIONAL& a, const RACIONAL& b){
+    RACIONAL tmp;
+    tmp.numerador = a.numerador * b.numerador ;
+    tmp.denominador = a.denominador * b.denominador;
+    int divis = RACIONAL::maximoComunDivisor(tmp.numerador, tmp.denominador);
+    
+    tmp.numerador /= divis;    tmp.denominador /= divis;
+    
+    return tmp;
+}
+
+RACIONAL operator/ (const RACIONAL& a, const RACIONAL& b){
+    RACIONAL tmp;
+    tmp.numerador = a.numerador * b.denominador ;
+    tmp.denominador = a.denominador * b.numerador;
+    int divis = RACIONAL::maximoComunDivisor(tmp.numerador, tmp.denominador);
+    
+    tmp.numerador /= divis;    tmp.denominador /= divis;
+    
+    return tmp;
+}
+
+ostream& operator<< (ostream& os, const RACIONAL &a){
+    os << a.numerador << " / " << a.denominador << endl;
+    return os;
+}
+
+istream& operator>> (istream& os, RACIONAL &a){
+    os >> a.numerador;
+    os >> a.denominador;
+    return os;
 }

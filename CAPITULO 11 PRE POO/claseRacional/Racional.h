@@ -1,7 +1,15 @@
 #ifndef RACIONAL_h
 #define RACIONAL_h
+#include <iostream>
 
 class RACIONAL{
+
+friend RACIONAL operator+ (const RACIONAL& a, const RACIONAL& b);
+friend RACIONAL operator- (const RACIONAL& a, const RACIONAL& b);
+friend RACIONAL operator* (const RACIONAL& a, const RACIONAL& b);
+friend RACIONAL operator/ (const RACIONAL& a, const RACIONAL& b);
+friend ostream& operator<< (ostream& os, const RACIONAL &a);
+friend istream& operator>> (istream& os, RACIONAL &a);
 
 public:
     RACIONAL(int num = 1, int denom = 1);
@@ -14,6 +22,34 @@ public:
     static int maximoComunDivisor(int nume, int denom);
     int getNumerador() const;
     int getDenominador() const;
+    
+    RACIONAL operator-() const{
+        return RACIONAL(-numerador, denominador);
+    }
+
+    RACIONAL& operator+= (const RACIONAL& a){
+        numerador = numerador*a.denominador + denominador*a.numerador ;
+
+        denominador *= a.denominador;
+        return *this;
+    }
+
+
+    RACIONAL& operator-= (const RACIONAL& a){
+        *this += (-a);
+        return *this;
+    }
+
+    RACIONAL& operator++() {
+        numerador += denominador;
+        return *this;
+    }
+
+    RACIONAL& operator--() {
+        numerador -= denominador;
+        return *this;
+    }
+
 
 private:
     int numerador;

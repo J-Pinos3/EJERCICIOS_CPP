@@ -13,6 +13,8 @@ int main(int argc, char const *argv[])
     Article a2;
     cout << line <<endl;
 
+    Article a3(a1);
+
     try{
         Article a3(3,"Py programming", 5.6);
 
@@ -24,6 +26,8 @@ int main(int argc, char const *argv[])
     a1.Print();
     cout << line <<endl;
     a2.Print();
+    cout << line <<endl;
+    a3.Print();
     cout << line <<endl;
 
 
