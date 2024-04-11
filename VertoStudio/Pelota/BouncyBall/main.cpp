@@ -1,11 +1,20 @@
 #include <stdio.h>
 #include <SDL.h>
+#include <iostream>
 #include <SDL_image.h>
 #include "BouncyBall.h"
+#include "plane.h"
+#include "gameobject.h"
 
-static SDL_Texture *ball = nullptr;
+static SDL_Texture *ball_texture = nullptr, *plane_texture = nullptr;
 static const int nBalls = 10;
-BouncyBall balls[nBalls];
+const int MAX_OBJECTS = 100;
+int numGameObjects = 0;
+
+GameObject *arr_objects[MAX_OBJECTS] = {nullptr};
+
+//BouncyBall balls[nBalls];
+//Plane plane;
 
 int processEvents(SDL_Window *window){
     SDL_Event event;
@@ -38,6 +47,7 @@ int processEvents(SDL_Window *window){
     return done;
 }
 
+
 void doRender(SDL_Renderer *renderer){
     SDL_SetRenderDrawColor(renderer, 240, 240, 255, 255);
     SDL_RenderClear(renderer);
@@ -48,15 +58,21 @@ void doRender(SDL_Renderer *renderer){
     // SDL_Rect rect = { 0,0,32,32 };
     //SDL_RenderCopy(renderer, ball, nullptr, &rect);
 
-    for(int i = 0; i < nBalls; i++){
-        balls[i].draw(renderer);
+    for(int i = 0; i < MAX_OBJECTS; i++){
+        if(arr_objects[i]){
+            arr_objects[i]->draw(renderer);
+        }
     }
+
 
     SDL_RenderPresent(renderer);
 }
 
+
 int main(int argc, char* args[]) {
 
+    //if this class is abstract, the object has to be a pointer
+    //GameObject *obj;
 
     SDL_Window* window;
     SDL_Renderer* renderer;
@@ -76,19 +92,39 @@ int main(int argc, char* args[]) {
 
     auto surface = IMG_Load("ball.png");
     if(surface){
-        ball = SDL_CreateTextureFromSurface(renderer, surface);
+        ball_texture = SDL_CreateTextureFromSurface(renderer, surface);
     }else{
         return 1;
     }
     SDL_FreeSurface(surface);
 
 
+    surface = IMG_Load("plane.png");
+    if(surface){
+        plane_texture = SDL_CreateTextureFromSurface(renderer, surface);
+
+    }else{
+        return 1;
+    }
+    SDL_FreeSurface(surface);
+
+
+
     for(int i = 0; i < nBalls; i++){
-        balls[i].setTexture( ball );
-        balls[i].setPosition(50+i*32,100);
-        balls[i].setElasticity((float)i/nBalls);
+
+        BouncyBall *ball = new BouncyBall();
+        ball->setTexture( ball_texture );
+        ball->setPosition(50+i*32,100);
+        (*ball).setElasticity((float)i/nBalls);
+
+        arr_objects[numGameObjects] = ball;
+        numGameObjects++;
     }
 
+    Plane *plane = new Plane();
+    plane->setTexture(plane_texture);
+    plane->setPosition(650,120);
+    arr_objects[numGameObjects++] = plane;
 
     int done = 0;
 
@@ -96,15 +132,28 @@ int main(int argc, char* args[]) {
         done = processEvents(window);
         doRender(renderer);
 
-        for(int i = 0; i < nBalls; i++){
-            balls[i].update();
+        for(int i = 0; i < MAX_OBJECTS; i++){
+            if(arr_objects[i]){
+                arr_objects[i]->update();
+            }
         }
 
         SDL_Delay(10);
     }
 
+    for(int i = 0; i < MAX_OBJECTS; i++){
+        if(arr_objects[i]){
+            delete arr_objects[i];
+            arr_objects[i] = nullptr;
+        }
+    }
+
+    std::cout << "numGameObjects: " << numGameObjects << std::endl;
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
+
+    SDL_DestroyTexture(ball_texture);
+    SDL_DestroyTexture(plane_texture);
 
     SDL_Quit();
 

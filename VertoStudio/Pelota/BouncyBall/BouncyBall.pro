@@ -6,7 +6,9 @@ CONFIG += console
 
 SOURCES += \
         BouncyBall.cpp \
-        main.cpp
+        gameobject.cpp \
+        main.cpp \
+        plane.cpp
 
 
 LIBS += -L C:/SDL2/lib/x64 -lSDL2 -lSDL2main
@@ -21,7 +23,9 @@ INCLUDEPATH += C:/SDL2/include
 INCLUDEPATH += C:/SDL2Image/include
 
 HEADERS += \
-    BouncyBall.h
+    BouncyBall.h \
+    gameobject.h \
+    plane.h
 
 
 

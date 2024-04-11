@@ -33,7 +33,3 @@ void BouncyBall::setElasticity(float e){
 }
 
 
-void BouncyBall::setPosition(float x, float y){
-    this->x = x;
-    this->y = y;
-}
