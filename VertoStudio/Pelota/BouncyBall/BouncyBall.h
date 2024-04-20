@@ -13,6 +13,8 @@ public:
     virtual ~BouncyBall(){}
 
     void setTexture(SDL_Texture *_texture);
+    //given that those 2 functions are already virtual in the base class
+    //it is not necessary to put virtual here again
     virtual void draw(SDL_Renderer *_renderer);
     virtual void update();
 

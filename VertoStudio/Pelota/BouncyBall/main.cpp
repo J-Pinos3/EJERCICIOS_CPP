@@ -128,15 +128,30 @@ int main(int argc, char* args[]) {
 
     int done = 0;
 
+
     while(!done){
         done = processEvents(window);
+
+        int numBalls = 0, numPlanes = 0;
+
         doRender(renderer);
 
         for(int i = 0; i < MAX_OBJECTS; i++){
             if(arr_objects[i]){
                 arr_objects[i]->update();
+
+                BouncyBall *ballPtr = dynamic_cast<BouncyBall * >(arr_objects[i]);
+                Plane *planePtr = dynamic_cast<Plane * >(arr_objects[i]);
+                if( ballPtr != nullptr ){
+                    numBalls+=1;
+                }else if( planePtr != nullptr ){
+                    numPlanes++;
+                }
             }
         }
+
+        std::cout << "# of balls: " << numBalls << std::endl;
+        std::cout << "# of planes: " << numPlanes << std::endl;
 
         SDL_Delay(10);
     }
@@ -147,6 +162,7 @@ int main(int argc, char* args[]) {
             arr_objects[i] = nullptr;
         }
     }
+
 
     std::cout << "numGameObjects: " << numGameObjects << std::endl;
     SDL_DestroyWindow(window);

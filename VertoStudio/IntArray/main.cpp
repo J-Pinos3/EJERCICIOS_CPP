@@ -25,10 +25,23 @@ void func(){
     //std::cout << c.get(1) << " " ;
 }
 
+IntArray* createArray(){
+
+    return new IntArray(5);
+}
+
 int main(){
 
     func();
-    //episode 6 overloading 20:00
+    
+    std::cout << "\n--------------\n";
+
+    IntArray *arr = createArray();
+    (*arr)[1] = 11;
+
+    std::cout << arr->get(1) << "\n";
+
+    delete arr;
 
     return 0;
 }
