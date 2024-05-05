@@ -9,8 +9,10 @@
 #include "BouncyBall.h"
 #include "plane.h"
 #include "gameobject.h"
+#include "texturemanager.h"
 
 
+static TextureManager *textureManager = nullptr;
 static SDL_Texture *ball_texture = nullptr, *plane_texture = nullptr;
 static const int nBalls = 10;
 //std::vector<GameObject *> arr_objects;
@@ -142,23 +144,28 @@ int main(int argc, char* args[]) {
 
     renderer = SDL_CreateRenderer(window, -1,SDL_RENDERER_ACCELERATED);
 
-    auto surface = IMG_Load("ball.png");
-    if(surface){
-        ball_texture = SDL_CreateTextureFromSurface(renderer, surface);
-    }else{
-        return 1;
-    }
-    SDL_FreeSurface(surface);
+    TextureManager::setRenderer(renderer);
+    textureManager = new TextureManager();
 
 
-    surface = IMG_Load("plane.png");
-    if(surface){
-        plane_texture = SDL_CreateTextureFromSurface(renderer, surface);
+    ball_texture = textureManager->getTexture("ball.png");
+//    auto surface = IMG_Load("ball.png");
+//    if(surface){
+//        ball_texture = SDL_CreateTextureFromSurface(renderer, surface);
+//    }else{
+//        return 1;
+//    }
+//    SDL_FreeSurface(surface);
 
-    }else{
-        return 1;
-    }
-    SDL_FreeSurface(surface);
+    plane_texture = textureManager->getTexture("plane.png");
+//    surface = IMG_Load("plane.png");
+//    if(surface){
+//        plane_texture = SDL_CreateTextureFromSurface(renderer, surface);
+
+//    }else{
+//        return 1;
+//    }
+//    SDL_FreeSurface(surface);
 
 
 
@@ -196,12 +203,14 @@ int main(int argc, char* args[]) {
     arr_objects.clear();
 
 
+
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
 
     SDL_DestroyTexture(ball_texture);
     SDL_DestroyTexture(plane_texture);
 
+    delete textureManager;
     SDL_Quit();
 
     return 0;

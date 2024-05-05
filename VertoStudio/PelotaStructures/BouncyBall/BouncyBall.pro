@@ -8,7 +8,8 @@ SOURCES += \
         BouncyBall.cpp \
         gameobject.cpp \
         main.cpp \
-        plane.cpp
+        plane.cpp \
+        texturemanager.cpp
 
 
 LIBS += -L C:/SDL2/lib/x64 -lSDL2 -lSDL2main
@@ -25,7 +26,8 @@ INCLUDEPATH += C:/SDL2Image/include
 HEADERS += \
     BouncyBall.h \
     gameobject.h \
-    plane.h
+    plane.h \
+    texturemanager.h
 
 
 
