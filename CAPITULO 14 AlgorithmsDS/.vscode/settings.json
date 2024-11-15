@@ -1,0 +1,19 @@
+{
+    "files.associations": {
+        ".fantomasignore": "ignore",
+        "array": "cpp",
+        "iostream": "cpp",
+        "random": "cpp",
+        "ctime": "cpp",
+        "initializer_list": "cpp",
+        "type_traits": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp",
+        "utility": "cpp",
+        "ostream": "cpp",
+        "xtree": "cpp",
+        "xlocinfo": "cpp",
+        "cstdlib": "cpp"
+    }
+}
